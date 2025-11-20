@@ -1,0 +1,145 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Warm off-white background */
+    --background: 50 24% 95%;
+    /* Charcoal black - soft, not harsh */
+    --foreground: 0 0% 7%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 7%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 7%;
+
+    /* Primary: Black for buttons and emphasis */
+    --primary: 0 0% 7%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary: Outline style */
+    --secondary: 0 0% 100%;
+    --secondary-foreground: 0 0% 7%;
+
+    /* Muted: Light grays for subtle elements */
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+
+    --accent: 0 0% 96%;
+    --accent-foreground: 0 0% 7%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Neutral gray for borders and lines */
+    --border: 0 0% 91%;
+    --input: 0 0% 91%;
+    --ring: 0 0% 7%;
+
+    --radius: 0.75rem;
+
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* CodePanda Mode - Terminal/Code Theme */
+  .code-panda-mode {
+    /* Dark terminal background */
+    --background: 120 100% 5%;
+    /* Bright green terminal text */
+    --foreground: 120 100% 75%;
+
+    --card: 120 100% 8%;
+    --card-foreground: 120 100% 75%;
+
+    --popover: 120 100% 8%;
+    --popover-foreground: 120 100% 75%;
+
+    /* Bright green for emphasis */
+    --primary: 120 100% 50%;
+    --primary-foreground: 120 100% 5%;
+
+    /* Dark green secondary */
+    --secondary: 120 100% 15%;
+    --secondary-foreground: 120 100% 75%;
+
+    /* Muted green tones */
+    --muted: 120 100% 10%;
+    --muted-foreground: 120 60% 50%;
+
+    --accent: 120 100% 20%;
+    --accent-foreground: 120 100% 85%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Green borders for terminal look */
+    --border: 120 100% 25%;
+    --input: 120 100% 15%;
+    --ring: 120 100% 50%;
+  }
+
+  .dark {
+    /* Keep the same light theme for dark mode */
+    --background: 50 24% 95%;
+    --foreground: 0 0% 7%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 7%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 7%;
+    --primary: 0 0% 7%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 100%;
+    --secondary-foreground: 0 0% 7%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+    --accent: 0 0% 96%;
+    --accent-foreground: 0 0% 7%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 91%;
+    --input: 0 0% 91%;
+    --ring: 0 0% 7%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+
+  /* CodePanda mode typography */
+  .code-panda-mode body {
+    font-family: 'Courier New', monospace;
+  }
+
+  .code-panda-mode h1,
+  .code-panda-mode h2,
+  .code-panda-mode h3,
+  .code-panda-mode h4,
+  .code-panda-mode h5,
+  .code-panda-mode h6 {
+    font-family: 'Courier New', monospace;
+    text-shadow: 0 0 10px hsl(var(--primary) / 0.5);
+  }
+}
+
+@layer utilities {
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+}
